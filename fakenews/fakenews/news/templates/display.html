@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Detection Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #333;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #0056b3;
+        }
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .news-section, .result-section {
+            background: #f4f4f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+        .news-section h2, .result-section h2 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #0056b3;
+        }
+        .news-section p {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+        .result-section {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .prediction {
+            font-size: 22px;
+            font-weight: bold;
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+        .accuracy {
+            font-size: 18px;
+            color: #666;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .back-link a {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid #0056b3;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .back-link a:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>News Detection Result</h1>
+        </div>
+        <div class="content">
+            <div class="news-section">
+                <h2>News</h2>
+                <p>{{ news }}</p>
+            </div>
+            <div class="result-section">
+                <h2>Result</h2>
+                <div class="prediction">Prediction: {{ prediction }}</div>
+                <div class="accuracy">Accuracy: {{ accuracy }}%</div>
+            </div>
+        </div>
+        <div class="back-link">
+            <a href="{% url 'home' %}">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
